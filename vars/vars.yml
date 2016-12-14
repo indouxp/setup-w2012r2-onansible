@@ -1,0 +1,6 @@
+---
+work_dir: 'C:\Users\Administrator\ansible'
+runas_ps1: '{{ work_dir }}\DoRunAs.ps1'
+runas_bat: '{{ work_dir }}\DoRunAs.bat'
+administrator_bat: '{{ work_dir }}\Bat4Admin.bat'
+

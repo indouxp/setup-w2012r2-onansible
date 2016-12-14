@@ -1,0 +1,24 @@
+---
+- name: test runas
+  hosts: w2012r2
+  vars_files:
+    - vars/vars.yml
+
+  tasks:
+    - name: mkdir ansible
+      win_file:
+        path: "{{ work_dir }}"
+        state: directory
+
+    - name: copy bat script
+      win_copy:
+        src: src/bat/DoRunAs.bat
+        dest: "{{ work_dir }}"
+
+    - name: copy bat script
+      win_copy:
+        src: src/bat/Bat4Admin.bat
+        dest: "{{ work_dir }}"
+
+    - name: run batch runas
+      win_shell: "{{ runas_bat }} {{ administrator_bat }}"
